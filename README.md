@@ -1,4 +1,4 @@
-# Import Todoist
+# Import Todoist tasks
 
 This plugin import all your tasks from Todoist to Obsidian.
 
