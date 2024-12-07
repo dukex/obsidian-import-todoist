@@ -8,14 +8,20 @@ import {
   Editor,
 } from "obsidian";
 
-import moment from "moment";
-
 interface ImportTodoistSettings {
   todoistApiKey: string;
 }
 
 const IMPORT_TODOIST_SETTINGS: ImportTodoistSettings = {
   todoistApiKey: "apiKey",
+};
+
+const toDate = (date?: string) => {
+  if (!!date) {
+    return date.split("T")[0];
+  }
+
+  return "";
 };
 
 const makeToDoistRequest = async (
@@ -133,7 +139,7 @@ class ImportAllTasksCommand {
       })
       .join(" ");
 
-    const created = `[created:: ${moment(task.created_at).format("YYYY-MM-DD")}]`;
+    const created = `[created:: ${toDate(task.created_at)}]`;
     const status = task.is_completed ? "x" : " ";
     const description = task.description ? `\n${task.description}\n` : "";
     const comments = task.comments
@@ -142,9 +148,7 @@ class ImportAllTasksCommand {
       })
       .join("\n\n");
 
-    const due = task.due
-      ? `[due:: ${moment(task.due.datetime).format("YYYY-MM-DD")}]`
-      : "";
+    const due = task.due ? `[due:: ${toDate(task.due.datetime)}]` : "";
     const id = `[id:: ${task.id}]`;
     const priority = `[priority:: ${["none", "low", "medium", "high", "highest"][task.priority]}]`;
     const project = `#project-${this.projects[task.project_id].name.replace(" ", "-")}`;
