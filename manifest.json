@@ -1,0 +1,11 @@
+{
+  "id": "import-todoist",
+  "name": "Import Todoist",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Import Todoist tasks to Obsidian",
+  "author": "Duke",
+  "authorUrl": "https://empersonalmeidax.wtf",
+  "fundingUrl": "https://github.com/sponsors/dukex",
+  "isDesktopOnly": false
+}
