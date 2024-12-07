@@ -207,8 +207,8 @@ export default class ImportTodoistPlugin extends Plugin {
     this.commander = new Commander(this.settings);
 
     this.addCommand({
-      id: "import-todoist-all",
-      name: "Import all tasks",
+      id: "import-all-tasks",
+      name: "Import all Todoist tasks",
       editorCallback: (editor: Editor) => {
         return this.commander.importAllTasks(editor);
       },
@@ -245,12 +245,16 @@ class ImportTodoistSettingsTab extends PluginSettingTab {
 
     containerEl.empty();
 
+    containerEl.createEl("h2", { text: "Authentication" });
+
     new Setting(containerEl)
-      .setName("Todoist API Key")
-      .setDesc("")
+      .setName("API Key")
+      .setDesc(
+        "Get your api key and enter it here. From https://todoist.com/app/settings/integrations",
+      )
       .addText((text) =>
         text
-          .setPlaceholder("Enter your secret")
+          .setPlaceholder("Enter your API Key")
           .setValue(this.plugin.settings.todoistApiKey)
           .onChange(async (value) => {
             this.plugin.settings.todoistApiKey = value;
