@@ -3,7 +3,7 @@
   "name": "Import Todoist tasks",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
-  "description": "Import Todoist tasks as Obsidian tasks.",
+  "description": "Import Todoist tasks as markdown tasks.",
   "author": "Duke",
   "authorUrl": "https://empersonalmeidax.wtf",
   "fundingUrl": "https://github.com/sponsors/dukex",
