@@ -1,6 +1,6 @@
 {
   "id": "import-todoist",
-  "name": "Import Todoist to Obsidian Tasks",
+  "name": "Import Todoist tasks",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
   "description": "Import Todoist tasks as Obsidian tasks.",
