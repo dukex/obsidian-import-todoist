@@ -108,8 +108,6 @@ class ImportAllTasksCommand {
 
   async execute(editor: Editor) {
     return this.loadData().then((tasks) => {
-      console.log("Importing all tasks");
-
       const markdownTasks = tasks.map((task: Task) => {
         return this.transformToMarkdown(task);
       });
@@ -249,16 +247,14 @@ class ImportTodoistSettingsTab extends PluginSettingTab {
 
     containerEl.empty();
 
-    containerEl.createEl("h2", { text: "Authentication" });
-
     new Setting(containerEl)
-      .setName("API Key")
+      .setName("API key")
       .setDesc(
         "Get your api key and enter it here. From https://todoist.com/app/settings/integrations",
       )
       .addText((text) =>
         text
-          .setPlaceholder("Enter your API Key")
+          .setPlaceholder("Enter your API key")
           .setValue(this.plugin.settings.todoistApiKey)
           .onChange(async (value) => {
             this.plugin.settings.todoistApiKey = value;
