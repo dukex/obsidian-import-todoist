@@ -3,9 +3,9 @@
   "name": "Import Todoist tasks",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
-  "description": "Import Todoist tasks as markdown tasks.",
+  "description": "Import Todoist tasks as Markdown tasks.",
   "author": "Duke",
-  "authorUrl": "https://empersonalmeidax.wtf",
+  "authorUrl": "https://emersonalmeidax.wtf",
   "fundingUrl": "https://github.com/sponsors/dukex",
   "isDesktopOnly": false
 }
